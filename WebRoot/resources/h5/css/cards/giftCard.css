@@ -1,0 +1,439 @@
+.card {
+    line-height: 1.25em
+}
+
+.card .txt {
+    color: #67738A
+}
+
+.card .mg {
+    margin: 10px
+}
+
+.card .pd10 {
+    padding: 10px
+}
+
+.card .pd010 {
+    padding: 0 10px
+}
+
+.card h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em
+}
+
+.card .btn-type3 {
+    display: inline-block;
+    width: 40%;
+    height: 30px;
+    margin: 15px 10px 0 0;
+    border: 1px solid #baac9d;
+    border-radius: 5px 5px 5px 5px;
+    background: #e2d7c5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e2d7c5));
+    background: -moz-linear-gradient(center top, #fff, #e2d7c5) repeat scroll 0 0 transparent;
+    font-size: .875em;
+    line-height: 30px;
+    color: #3c3c3c;
+    text-align: center;
+    cursor: pointer
+}
+
+.card .btn-type3:hover {
+    background: #ecc27f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ecc27f));
+    background: -moz-linear-gradient(center top, #fff, #ecc27f) repeat scroll 0 0 transparent
+}
+
+.card .btn-type4 {
+    display: inline-block;
+    padding: 4px 20px;
+    color: #3d3d3d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e8e8e8));
+    background: -moz-linear-gradient(center top, #fff, #e8e8e8) repeat scroll 0 0 transparent;
+    border: 1px solid #b6b3b1;
+    border-radius: 3px
+}
+
+.card .prompt-box {
+    border: 1px solid #dfd7cc;
+    border-radius: 5px;
+    background-color: #fffdf7;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .1)
+}
+
+.card .prompt-box .cont, .card .prompt-box .cont2 {
+    display: inline-block;
+    min-height: 31px;
+    padding-left: 45px;
+    background: url(http://static.m.jd.com/home/images/html5/icon_card.png) 0 50% no-repeat;
+    color: #959595
+}
+
+.card .prompt-box .cont2 {
+    background: url(http://static.m.jd.com/home/images/html5/icon-card2.png) 0 50% no-repeat;
+    color: #6ead2f
+}
+
+.card .pb-pd {
+    padding: 24px 10px
+}
+
+.card .pb-mg {
+    margin: 108px 0 38px
+}
+
+.card .info-input {
+    margin: 10px 0;
+    line-height: 25px;
+    word-wrap: break-word
+}
+
+.card .info-input label {
+    margin: 0 10px 0 0;
+    font-size: .95em;
+    vertical-align: middle
+}
+
+.card .info-input input {
+    height: 18px;
+    padding-left: 8px;
+    padding-top: 3px;
+    border: 1px solid #A4A4A4;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #F4F4F4;
+    font-size: .875em;
+    line-height: 18px;
+    box-shadow: 0 1px 3px #C8C8C8 inset;
+    color: #b8b1ab
+}
+
+.card .input-box {
+    width: 58%;
+    padding: 5px 0
+}
+
+.card .pmpt {
+    font-size: .75em;
+    color: #b3aba5
+}
+
+.card .verif-code {
+    margin-left: 20px;
+    vertical-align: middle
+}
+
+.card .coupon, .card .coupon2, .card .coupon3 {
+    position: relative;
+    width: 284px;
+    height: 126px;
+    margin-top: 30px;
+    padding: 10px 0 10px 10px;
+    background: url(http://static.m.jd.com/home/images/html5/bg_coupon.png) 0 0 no-repeat
+}
+
+.card .coupon2 {
+    background: url(http://static.m.jd.com/home/images/html5/bg_coupon2.png) 0 0 no-repeat
+}
+
+.card .coupon3 {
+    background: url(http://static.m.jd.com/home/images/html5/bg_coupon3.png) 0 0 no-repeat
+}
+
+.card .j-coupon, .card .d-coupon {
+    display: inline-block;
+    width: 31px;
+    height: 18px;
+    background-color: #db1b1b;
+    color: #fff;
+    font-size: .75em;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1)
+}
+
+.card .d-coupon {
+    background-color: #fb9543
+}
+
+.card .coupon .txt, .card .coupon2 .txt, .card .coupon3 .txt {
+    display: block;
+    margin: 22px 0;
+    font-size: 1.45em;
+    color: 555
+}
+
+.card .coupon .txt2, .card .coupon2 .txt2, .card .coupon3 .txt2 {
+    display: block;
+    font-size: .75em;
+    color: #ababab
+}
+
+.card .btn-get {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 84px;
+    height: 146px;
+    vertical-align: middle
+}
+
+.card .btn-get span {
+    display: block;
+    margin-top: 48px;
+    padding: 0 23px;
+    color: #fff;
+    font-size: 1.125em
+}
+
+.card .coupon3 .btn-get span {
+    margin-top: 58px;
+    padding: 0 15px
+}
+
+.card .bg-coupon {
+    overflow: hidden;
+    width: 293px;
+    margin-top: 30px;
+    background-color: #e2e2e2;
+    border-bottom: 1px solid #d9d9d9
+}
+
+.card .bg-coupon .coupon2 {
+    margin-top: 0
+}
+
+.card .bg-coupon .info-input {
+    margin-left: 10px
+}
+
+.card .bg-coupon .btn-type4 {
+    margin: 0 0 10px 10px
+}
+
+.new-gift-card {
+    padding: 20px
+}
+
+.new-no-card {
+    display: block;
+    color: #313236;
+    text-align: center
+}
+
+.new-gift-card .new-input-span-v2 {
+    display: inline-block;
+    width: 105px;
+    height: 26px
+}
+
+.new-gift-card .new-input-span-v2 .new-input {
+    height: 15px;
+    text-indent: 0px;
+    width: 90%;
+    padding: 6px 0 3px 10px
+}
+
+.new-card-yz img {
+    vertical-align: top
+}
+
+.new-a-change {
+    display: inline-block;
+    height: 28px;
+    font-size: 14px;
+    color: #6e6e6e
+}
+
+.new-card-btn {
+    border-top: 1px dotted #ccc
+}
+
+.new-card-lst {
+    padding: 10px;
+    border: 1px solid #b4b4b4;
+    font-size: 14px;
+    color: #6e6e6e
+}
+
+.new-card-lstw {
+    padding: 5px 5px 10px;
+    border-bottom: 1px dotted #6e6e6e
+}
+
+.new-card-lstw2 {
+    padding: 10px 5px 5px
+}
+
+.new-cart-price {
+    position: absolute;
+    right: 5px
+}
+
+.new-gift-card .new-cp-prom {
+    line-height: 16px
+}
+
+.new-gift-card .new-cp-prom p {
+    padding: 0 15px 0 5px
+}
+
+.new-paging .new-tbl-cell span.new-next span {
+    background: url(http://static.m.jd.com/home/images/touch2013/icon.png) no-repeat scroll 100% -804px transparent;
+    padding-left: 18px;
+    padding-right: 13px
+}
+
+.new-paging .new-tbl-cell .new-a-next span {
+    padding-right: 13px;
+    background: url(http://static.m.jd.com/home/images/touch2013/icon.png) 100% -804px no-repeat
+}
+
+.new-paging .new-tbl-cell span.new-a-next span {
+    background: url(http://static.m.jd.com/home/images/touch2013/icon.png) no-repeat scroll 100% -1393px transparent;
+    padding-right: 13px
+}
+
+span.new-next {
+    cursor: pointer;
+    color: #545353;
+    font-size: 12px
+}
+
+.my-property-nav {
+    background: #f1f1f5;
+    border-bottom: 1px solid #bebebe;
+    height: 50px
+}
+
+.my-property-nav-link {
+    display: block;
+    text-align: center;
+    width: 25%;
+    float: left
+}
+
+.my-property-nav-link strong {
+    margin-top: 8px;
+    display: block
+}
+
+.my-property-nav-current {
+    color: #a40000
+}
+
+.my-property-nav-current:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #a40000
+}
+
+.giftcards {
+    margin: 20px 20px
+}
+
+.giftcard {
+    background: #ff9900;
+    color: #fff;
+    height: 110px;
+    margin-bottom: 10px
+}
+
+.top, .bottom {
+    padding: 0px 20px
+}
+
+.top {
+    border-bottom: 1px dashed #fff;
+    height: 50%
+}
+
+.price, .balance, .no, .expire {
+    display: block;
+    line-height: 25px
+}
+
+.balance {
+    color: #c40900
+}
+
+.balance.gray {
+    color: #666666
+}
+
+.giftcards .gray {
+    background: #cccccc
+}
+
+.fx-tab {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ccc
+}
+
+.fx-tab-v1 {
+    position: relative;
+    padding-right: 100px
+}
+
+.fx-tab-v1 .btn-search {
+    top: 12px
+}
+
+.tbl-type {
+    display: table;
+    width: 100%
+}
+
+.tbl-cell {
+    display: table-cell
+}
+
+.fx-tab .tbl-cell {
+    text-align: center
+}
+
+.fx-tab .tbl-cell:first-child a {
+    display: block;
+    padding: 5px 0 6px;
+    border: 1px solid #e4393c;
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    color: #e4393c
+}
+
+.fx-tab .tbl-cell:last-child a {
+    display: block;
+    padding: 5px 0 6px;
+    border: 1px solid #e4393c;
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+    color: #e4393c
+}
+
+.fx-tab .tbl-cell a.on {
+    color: #fff;
+    background-color: #e4393c
+}
+
+.btn-search {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    padding: 5px 10px 6px;
+    font-size: 14px;
+    color: #e4393c;
+    border: 1px solid #e4393c;
+    border-radius: 4px
+}
+
+.btn-search2 {
+    padding: 5px 10px 6px;
+    font-size: 14px;
+    color: #e4393c;
+    border: 1px solid #e4393c;
+    border-radius: 4px
+}

@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.right_con{overflow:hidden; padding:40px 0 0 60px;
+}
+.tab_box{width:210px; float:left; height:400px; background:#eae9e9; margin-right:60px;
+}
+.tab_box h3, .tab_con h3{height:42px; line-height:42px; padding-left:8px; font-size:18px; font-weight:normal; color:#808080;
+}
+.tab_box .tab_list{width:100%; overflow:hidden;
+}
+.tab_list li{height:32px; line-height:32px; font-size:16px; margin-top:6px; width:100%; float:left;
+}
+.tab_list li a{padding-left:20px; float:left; width:190px; color:#666666;
+}
+.tab_list .current{background:#d7d6d6;
+}
+.tab_con{float:left; padding-top:20px;
+}
+.tab_con h3{padding-left:0; font-size:16px; padding-top:20px; height:50px; line-height:50px;
+}
+.tab_con .close_btn, .tab_con .open_btn{font-size:14px; padding:0 20px 0 4px; 
+}
+.tab_con .select{width:188px; height:28px;
+}
+.tab_con .save_btn{width:110px; height:32px; line-height:32px; text-align:center; border:none; background:#76d4eb; color:#FFF; font-size:14px; margin-top:40px;
+}

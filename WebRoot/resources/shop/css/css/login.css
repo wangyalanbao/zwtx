@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+.loginbox{min-width:1000px; max-width:1440px; margin:0 auto; height:840px; overflow:hidden;
+}
+.login{width:1030px; height:512px; margin:120px auto;
+}
+.login .c1{background:#b3d380;
+}
+.login .c2{background:#93c14b;
+}
+.login .c3{background:#a7dbdd;
+}
+.login .c4{background:#62b3b6;
+}
+.login .a1{width:499px; height:512px; float:left;
+}
+.login .a1 img, .login .a2 img{padding:95px 0 40px 202px;
+}
+.login .a1 span, .login .a2 span{float:left; width:100%; text-align:center; font-size:30px; color:#FFF; line-height:30px;
+}
+.login .a1 em, .login .a2 em{float:left; width:100%; text-align:center; font-size:24px; color:#FFF; padding:24px 0 116px 0;
+}
+.login .a1 i{float:left; width:100%; text-align:center; font-size:14px; color:#FFF;
+}
+.login .a2{width:499px; height:512px; float:right;
+}
+{padding:95px 0 42px 202px;
+}
+.login .a2 i{float:left; width:100%; text-align:center; font-size:14px; color:#FFF;
+}

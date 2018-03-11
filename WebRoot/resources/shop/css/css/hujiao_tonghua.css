@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.tonghua{width:476px; overflow:hidden; margin:42px 0 0 268px;
+}
+.tonghua h4{font-size:16px; color:#595959; font-weight:normal;
+}
+.tonghua h3{font-size:18px; color:#595959; font-weight:normal; padding:22px 0 30px 0;
+}
+.tonghua .imgbox{width:100%; height:130px; text-align:center;
+}
+.tonghua .status{padding:14px 0 34px 0; text-align:center; font-size:18px; color:#595959;
+}
+.hangup_box{padding:0 138px 98px; overflow:hidden;
+}
+.hangup_box .hangup{display:block; width:202px; height:40px; line-height:40px; text-align:center; font-size:24px; background:#fc5b4a; color:#FFF;
+}
+.tonghua .footer_tips{background:url(../images/green_solid.png) 124px 8px no-repeat; font-size:14px; color:#444; padding-left:150px;
+}

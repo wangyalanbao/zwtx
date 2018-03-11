@@ -1,0 +1,346 @@
+@charset "utf-8";
+/* CSS Document */
+/*右侧部分*/
+.commonleft{width:534px; height:480px; float:left; margin-top:20px;
+}
+.commonright{width:296px; height:480px; float:left; margin-top:20px; margin-left:24px; 
+}
+.tablist{width:277px; height:50px; padding:0 10px 0 9px; background:#eae9e9;
+}
+.tablist li{float:left; width:75px; text-align:center; height:50px; line-height:50px; margin-right:26px; font-size:20px; color:#808080; cursor:pointer; position:relative;
+}
+.tablist li.active{color:#16bae2; height:47px; border-bottom:#16bae2 solid 3px;
+}
+.dotted{display:block; width:7px; height:7px; background:url(../images/dotted.png) left top no-repeat; position:absolute; 
+}
+.tablist .li1 .dotted{right:10px; top:10px;
+}
+.tablist li.margin{margin:0;
+}
+.ulbox{width:296px; height:429px; border-top:#e3e3e3 solid 1px; background:#f4f4f4; position:relative;
+}
+.ulbox .creat_group{font-size:14px; color:#16bae2; display:block; margin:10px 0 0 18px;
+}
+.ulbox .child{display:none;
+}
+/*会话*/
+.ul1, .ul2{width:276px; height:360px; margin-top:8px; margin-left:20px; overflow-x:hidden; overflow-y:auto;
+}
+.ul1{position:relative;
+}
+.ul1 li{height:50px; margin-top:10px; position:relative; width:100%; float:left;
+}
+.ul1 li .dotted{left:46px; top:-4px;
+}
+.ul1 .touxiang, .ul2 .touxiang{float:left;
+}
+.ul1 .info, .ul2 p{width:196px; *width:194px; float:left; margin-left:12px;
+}
+.ul1 .info span, .ul1 .info em{display:block; line-height:25px;
+}
+.ul1 .info span{font-size:16px; color:#808080;
+}
+.ul1 .info em{font-size:12px; color:#a9a9a9; word-wrap:break-word; word-break:break-all; white-space:nowrap; word-wrap:normal; overflow:hidden;text-overflow:ellipsis;
+}
+/*联系人*/
+.ul2 li{height:50px; margin-top:10px; width:100%; float:left;
+}
+.ul2 p{line-height:50px; font-size:16px; color:#808080;
+}
+/*群组*/
+.ul3{width:296px; height:360px; margin-top:6px;
+}
+.ul3 h2{font-weight:normal; width:262px; margin:0 18px 14px 15px; height:27px;
+}
+.ul3 h2 a{display:inline-block; width:121px; height:27px; line-height:27px; text-align:center; font-size:14px; color:#808080; 
+}
+.ul3 h2 .ijoin{float:left;
+}
+.ul3 h2 .public{float:right;
+}
+.ul3 h2 .current{background:#16bae2; color:#FFF;
+}
+/*群组--我加入的群组*/
+.grouplist{width:296px;
+}
+.commonlist{width:276px; /*height:360px;*/height:310px; margin-left:20px; overflow-x:hidden; overflow-y:auto; display:none;
+}
+.commonlist li{height:50px; margin-top:10px; width:100%; float:left;
+}
+.commonlist .touxiang{float:left;
+}
+.commonlist .group_info{width:196px; *width:194px; float:left; margin-left:12px;
+}
+.commonlist .group_info span, .commonlist .group_info em{display:block; line-height:25px;
+}
+.commonlist .group_info span{font-size:16px; color:#808080;
+}
+.commonlist .group_info em{font-size:12px; color:#a9a9a9; word-wrap:break-word; word-break:break-all; white-space:nowrap; word-wrap:normal; overflow:hidden;text-overflow:ellipsis;
+}
+/*个人会话,群组聊天对话框*/
+.personal_words{}
+.personal_words .title, .word_system .title, .group_words .group_title{width:534px; height:49px; border-bottom:#e3e3e3 solid 1px; line-height:50px; background:#eae9e9;
+}
+.personal_words .title span, .word_system .title span, .group_words .group_title span{float:left; padding-left:30px; font-size:20px; color:#808080;
+}
+.personal_words .title .empty_btn, .word_system .title .empty_btn{float:right; width:145px; height:40px; line-height:40px; text-align:center; color:#FFF; background:#c0c9c3; font-size:16px; margin:5px 5px 0 0;
+}
+.group_btns{width:220px; height:40px; margin:5px 0; float:right;
+}
+.group_btns a{float:left; margin-right:15px; width:95px; height:36px; line-height:36px; text-align:center; color:#FFF; font-size:16px;
+}
+.group_btns .group_msg{background:#adacfd;
+}
+.group_btns .group_card{background:#76d4eb;
+}
+.infobox{width:534px; height:430px; background:#f9f9f9;
+}
+.info_get{width:534px; height:258px; overflow-x:hidden; overflow-y:auto;
+}
+.sender{margin-top:18px; margin-left:14px; overflow:hidden;
+}
+.sender .pic1{float:left; padding-right:20px;
+}
+.sender span{padding:7px 22px 5px 12px; background:#e9eaea; float:left; max-width:358px; word-wrap:break-word; word-break: break-all; font-size:14px; color:#808080;
+}
+.replyer{margin-top:15px; text-align:right; overflow:hidden; margin-right:14px;
+}
+.replyer .pic2{float:right; margin-left:20px;
+}
+.replyer span{padding:7px 22px 5px 12px; background:#a4e7f7; float:right; max-width:358px; word-wrap:break-word; word-break: break-all; font-size:14px; color:#808080;
+} 
+.info_choose{width:534px; height:30px; background:#eeeeee; line-height:30px; position:relative;
+}
+.info_choose .file{width:56px; height:30px; position:absolute; left:108px; top:0; opacity:0; filter:alpha(opacity:0);
+}
+.info_choose a{float:left; font-size:16px; color:#808080;
+}
+.info_choose .biaoqing{background:url(../images/info_icons.png) 0 3px no-repeat; margin-left:16px; padding-left:30px;
+}
+.info_choose .fujian{background:url(../images/info_icons.png) 0 -37px no-repeat; margin-left:30px; padding-left:24px;
+}
+.info_choose .voice{background:url(../images/info_icons.png) 0 -70px no-repeat; margin-left:36px; padding-left:27px;
+}
+.info_choose .voice em{font-size:12px;
+}
+.info_send .area{width:494px; height:84px; padding-left:8px; border:#d5d5d5 solid 1px; resize:none; margin-top:8px; margin-left:12px; background:#FFF; overflow-x:hidden; overflow-y:auto; word-wrap:break-word; word-break: break-all;
+}
+.info_send .btnbox{width:502px; margin-left:12px; overflow:hidden;
+}
+.info_send .send_btn{width:146px; height:36px; line-height:36px; text-align:center; color:#FFF; font-size:16px; background:#6dce2c; float:right; margin-top:5px;
+}
+/*个人会话-->系统消息*/
+.msglist{width:520px; height:414px; padding:16px 0 0 14px; background:#f9f9f9; 
+}
+.msglist_box{height:388px; overflow-x:hidden; overflow-y:auto;
+}
+.msglist dl{overflow:hidden;
+}
+.msglist .dl1{margin-top:22px;
+}
+.msglist dt{width:56px; float:left; margin-right:12px;
+}
+.msglist dt img{margin-left:2px;
+}
+.msglist dt span{font-size:14px; color:#808080;
+}
+.msglist dd{float:left; width:430px; padding-bottom:10px; padding-top:10px; border:#d5d5d5 solid 1px; background:#FFF;
+}
+.msglist dd h2{font-weight:normal; font-size:16px; color:#808080; margin:4px 10px 0 18px; word-wrap:break-word; word-break:break-all; white-space:nowrap; word-wrap:normal; overflow:hidden;text-overflow:ellipsis;
+}
+.msglist dd p{font-size:12px; color:#a2a2a2; line-height:14px; margin:6px 10px 0 18px; word-wrap:break-word; word-break:break-all; white-space:nowrap; word-wrap:normal; overflow:hidden;text-overflow:ellipsis;
+}
+.msglist .msg_l{width:278px; float:left; overflow:hidden;
+}
+.msglist .msg_r{float:left; margin-left:38px; width:80px;
+}
+.msglist .msg_r a, .msglist .msg_r span{display:inline-block; width:80px; height:36px; text-align:center; font-size:16px; color:#FFF; margin-top:8px; line-height:36px;
+}
+.msglist .msg_r span{color:#aaa;
+}
+.msg_r .admin_btn{background:#4ce87b;
+}
+.msg_r .refuse_btn{background:#f2ae43;
+}
+/*群名片*/
+.groupcard_box{
+}
+.groupcard_box .title{width:534px; height:49px; border-bottom:#e3e3e3 solid 1px; line-height:50px; background:#eae9e9;
+}
+.groupcard_box .title span{float:left; padding-left:30px; font-size:20px; color:#808080;
+}
+.groupcard_box .title .return_btn{float:right; width:68px; height:40px; line-height:40px; text-align:center; color:#FFF; background:#76d4eb; font-size:16px; margin:5px 14px 0 0;
+}
+.cardbox{width:534px; height:430px; background:#f9f9f9;
+}
+.groupcard_box .top_title{padding:16px 10px 14px 16px; font-size:20px; color:#aeaeae; font-weight:normal;
+}
+.groupcard_list{width:502px; height:257px;  margin:0 auto; 
+}
+.groupcard_list li{height:37px; line-height:37px; padding-left:20px; margin-top:5px;
+}
+.groupcard_list .label{float:left; width:70px; height:37px; line-height:37px; font-size:16px; color:#aeaeae; margin-right:20px;
+}
+.groupcard_list .txt{width:360px; height:35px; line-height:37px; border:#d5d5d5 solid 1px; 
+}
+.groupcard_box .save_btn{float:right; width:146px; height:36px; line-height:36px; text-align:center; font-size:16px; color:#FFF; background:#6dce2c; margin-top:68px; margin-right:14px;
+}
+/*公共群组群资料*/
+.group_data{}
+.group_data1 .title, .group_data2 .title, .group_data3 .title{width:534px; height:49px; border-bottom:#e3e3e3 solid 1px; line-height:50px; background:#eae9e9; 
+}
+.group_data1 .title span, .group_data2 .title span, .group_data3 .title span{float:left; padding-left:30px; font-size:20px; color:#808080;
+}
+.group_data1 .operation_btns, .group_data2 .operation_btns, .group_data3 .operation_btns{width:310px; height:40px; float:right; margin-top:5px
+}
+.group_data1 .operation_btns a, .group_data2 .operation_btns a, .group_data3 .operation_btns a{float:left; margin-right:11px; height:40px; line-height:40px; color:#FFF; font-size:16px; text-align:Center;
+}
+.operation_btns .empty_charts{width:117px; background:#5edb74;
+}
+.operation_btns .exit_group{width:88px; background:#fd825c;
+}
+.operation_btns .return{width:68px; background:#76d4eb;
+}
+.groupdata_info{width:534px; height:430px; background:#f9f9f9; 
+}
+.groupdata_box{width:534px; height:410px; overflow-x:hidden; overflow-y:auto;
+}
+.post_title{font-size:20px; color:#808080; font-weight:normal; padding:22px 0 0 30px;
+}
+.post_con{padding:5px 14px 10px 24px; overflow:hidden;
+}
+.post_con .txtarea{width:380px; height:90px; border:#d5d5d5 solid 1px; padding-left:10px; resize:none; float:left; margin-right:16px; 
+}
+.post_con .post_save{width:68px; height:40px; line-height:40px; text-align:center; font-size:16px; color:#FFF; float:left; background:#f2ae43; margin-top:52px;
+}
+.post_msg{font-size:14px; color:#808080; line-height:18px; padding:8px 16px 30px 30px;
+}
+.group_mem_title, .group_mem_title1{padding:0 16px 6px 30px; font-size:20px; color:#808080;  font-weight:normal;
+}
+.group_mem_title1{border-bottom:#CCC solid 1px; padding:0; margin:0 16px 6px 30px; overflow:hidden;
+}
+.group_mem_title1 .title_name{float:left;
+}
+.group_mem_title1 .invite_member{float:right; font-size:14px; color:#16bae2;
+}
+.group_mem_list{padding-left:30px; overflow:hidden; padding-bottom:20px;
+}
+.group_mem_list li{height:50px; line-height:50px; margin-top:10px;
+}
+.group_mem_list .touxiang{float:left; margin-right:14px;
+}
+.group_mem_list .member_info{width:324px; float:left;
+}
+.member_info span, .member_info em{display:block; line-height:25px;
+}
+.member_info span{font-size:14px; color:#808080;
+}
+.member_info em{font-size:12px; color:#a9a9a9; word-wrap:break-word; word-break:break-all; white-space:nowrap; word-wrap:normal; overflow:hidden;text-overflow:ellipsis;
+}
+.group_mem_list .ability{float:left; display:none;
+}
+.group_mem_list .ability a{font-size:14px; color:#5fa6ee; margin-right:10px;
+}
+/*申请加入群组*/
+.tip1{padding:14px 0 0 8px; text-align:center; font-size:18px; color:#fd825c;
+}
+.tip2{padding-bottom:38px; text-align:center; font-size:18px; color:#808080;
+}
+.join_btn{width:118px; height:40px; line-height:40px; text-align:center; font-size:16px; color:#FFF; background:#5edb74; margin:0 auto; display:block;
+}
+
+/*弹出层部分*/
+.maskbox{width:100%; height:100%; position:fixed; background:#000; opacity:0.5; filter:alpha(opacity:50); left:0; top:0; z-index:90; display:none;
+}
+.new_mem_box, .new_group_box{width:520px; height:360px; position:absolute; left:50%; top:50%; margin-left:-260px; margin-top:-240px; display:none; z-index:100; background:#FFF; padding:10px 10px 16px 10px;
+}
+.new_mem_box h3, .new_group_box h3{height:30px; line-height:30px; font-size:18px; color:#808080; font-weight:normal; border-bottom:#CCC solid 1px;
+}
+.new_mem_box .close_btn, .new_group_box .close_btn{float:right; font-size:14px; color:#16bae2;
+}
+.new_mem_box .title, .new_group_box .title{float:left;
+}
+.new_mem_title{font-size:14px; color:#808080; padding:10px 0 10px 20px; line-height:14px;
+}
+.contact_list{width:300px; height:100px; overflow-x:hidden; overflow-y:auto; padding-left:40px;
+}
+.contact_list li{width:100%; height:24px; margin-top:6px;
+}
+.contact_list .checkbox{float:left; vertical-align:middle; margin:5px 4px 0 2px; *margin:2px 4px 0 2px;
+}
+.contact_list .num_info{font-size:12px; float:left;
+}
+.radio_box{padding-left:40px; overflow:hidden;
+}
+.radio_box .radio, .new_group_list .radio{float:left; vertical-align:middle; margin:5px 2px 0 0; *margin:2px 2px 0 0 ;
+}
+.radio_box em{float:left; font-size:12px;
+}
+.radio_box .em1{margin-right:30px;
+}
+.reson_box{width:360px; padding-left:44px;
+}
+.reson_box .reson_txt{width:226px; height:28px; border:#d5d5d5 solid 1px; padding-left:6px; line-height:28px;
+}
+.new_mem_box .invite_btn, .new_group_list .creat_btn{display:block; width:112px; height:40px; line-height:40px; text-align:center; color:#FFF; background:#5edb74; font-size:16px; margin:12px 0 0 44px;
+}
+.new_group_list{width:500px; overflow:hidden;
+}
+.new_group_list span{float:left;
+}
+.new_group_list li{width:100%; overflow:hidden; margin-top:22px;
+}
+.new_group_list .label{float:left; width:100px; text-align:right; font-size:14px; color:#808080;
+}
+.new_group_list .name_txt{width:226px; height:29px; line-height:28px; border:#d5d5d5 solid 1px; padding-left:6px;
+}
+.new_group_list em{float:left; font-size:12px;
+}
+.new_group_list .em1, .new_group_list .em2{padding-right:18px;
+}
+.new_group_list .area{width:266px; height:80px; padding-left:6px; border:#d5d5d5 solid 1px; resize:none;
+}
+.new_group_list .creat_btn{margin:0; float:left;
+}
+/*上传附件*/
+#file1{position:absolute; width:54px; filter:alpha(opacity:0); opacity:0; left:108px;
+}
+.graph{ 
+width:530px; 
+border:1px solid #F8B3D0; 
+height:25px; 
+position:absolute; top:220px;
+} 
+#bar{ 
+display:block; 
+background:#FFE7F4; 
+float:left; 
+height:100%; 
+text-align:center; 
+} 
+.graph a{display:inline-block; line-height:26px;
+}
+/*表情框*/
+.info_choose .wrap_bq{width:376px; height:120px; overflow-x:hidden; overflow-y:auto; border:#d5d5d5 solid 1px; position:absolute; left:10px; top:-122px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

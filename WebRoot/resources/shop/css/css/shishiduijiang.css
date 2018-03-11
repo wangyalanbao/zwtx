@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*实时对讲*/
+.ss_content{width:480px; overflow:hidden; padding:40px 0 0 40px;
+}
+.ss_content .p1{font-size:16px; color:#595959; line-height:24px; padding:15px 0;
+}
+.account_div{width:386px; overflow:hidden; margin-left:42px; padding-bottom:12px;
+}
+.account_list{width:100%; height:210px; overflow-x:hidden; overflow-y:auto;
+}
+.account_list li{width:100%; height:30px; line-height:30px; margin-bottom:6px;
+}
+.account_list .checkbox, .account_list .radio{float:left; margin:8px 4px 0 0; *margin:4px 4px 0 0;
+}
+.ss_content .creat_btn, .ss_content .join_btn{display:inline-block; width:148px; height:32px; line-height:32px; text-align:center; font-size:16px; color:#FFF; background:#76d4eb; margin-left:42px;
+}
+.ss_content .p2{fon-size:16px; color:#a9a9a9; line-height:24px; margin-top:22px;
+}
+/*对讲中弹出层*/
+.mask{background:#000;
+}
+.speak_box, .speak_box1{width:590px; height:466px; background:#f4f4f4; position:absolute; left:50%; top:50%; margin-left:-295px; margin-top:-233px; z-index:99;
+}
+.speak_box .title, .speak_box1 .title{height:50px; line-height:50px; padding-left:16px; font-size:16px; color:#808080;font-weight:normal; background:#eae9e9;
+}
+.speak_list{padding-left:20px;
+}
+.speak_list .l1{width:100%; overflow:hidden; margin-top:8px; line-height:30px; font-size:14px; color:#666;
+}
+.speak_list .label{float:left; width:80px; line-height:26px;
+}
+.speak_list .span1{float:left; line-height:30px;
+}
+.speak_list .members_list{width:468px; float:left; height:56px; overflow-x:hidden; overflow-y:auto;
+}
+.members_list li{float:left; line-height:26px; width:210px;
+}
+.members_list .tc{float:right; line-height:26px; color:#03c2fa; padding-right:10px; display:none;
+}
+.members_list .admin, .members_list .join, .members_list .quit, .members_list .speaking{float:left; background:url(../images/speak_icons.png) 0 -584px no-repeat; padding-left:24px; padding-right:8px;
+}
+.members_list .status_info{float:left; line-height:26px; color:#888;
+}
+.members_list .join{background:url(../images/speak_icons.png) 2px -612px no-repeat;
+}
+.members_list .speaking{background:url(../images/speak_icons.png) 0 -635px no-repeat; padding-left:20px;
+}
+.members_list .quit{background:url(../images/speak_icons.png) 0 -657px no-repeat; padding-left:20px;
+}
+.mkf{width:100%; padding:12px 0; background:#eae9e9; margin-top:12px; text-align:center;
+}
+.mkf span{display:inline-block; width:160px; height:160px; background:url(../images/speak_icons.png) 0 0 no-repeat; margin:0 auto; cursor:pointer;
+}
+.mkf .a2{background-position: 0 -198px;
+}
+.mkf .a3{background-position: 0 -394px;
+}
+.speak_box .p1, .speak_box1 .p1{font-size:20px; color:#333; line-height:30px; margin-top:6px; text-align:center;
+}
+.speak_box .p2, .speak_box1 .p2{font-size:12px; line-height:14px; color:#888; text-align:center;
+}
+.wrap_btn{width:570px; height:40px; margin:18px auto 0; background:#eae9e9;
+}
+.wrap_btn span{float:left; line-height:40px; font-size:14px; color:#9d792f; padding-left:14px;
+}
+.wrap_btn .quit_speak{float:right; width:140px; height:28px; line-height:28px; text-align:center; color:#FFF; font-size:14px; background:#76d4eb; margin:6px 16px 0 0;
+}
+/*语音会议*/
+.creat_room{margin:0 0 30px 42px; height:28px; line-height:28px;
+}
+.creat_room a{color:#16bae2;
+}
+/*创建新房间弹出层*/
+.room_box{width:400px; height:160px; position:absolute; left:50%; top:50%; margin-left:-200px; margin-top:-80px; z-index:999; background:#FFF; 
+}
+.room_box .title{width:100%; height:30px; line-height:30px; background:#eae9e9; font-weight:normal;
+}
+.room_box .title span{float:left; padding-left:18px; font-size:16px; color:#808080;
+}
+.room_box .title a{float:right; padding-right:18px; font-size:14px; color:#16bae2;
+}
+.room_box .room_name{line-height:34px; padding-top:4px; margin-left:26px; color:#333;
+}
+.room_box .txt_box{margin-left:26px;
+}
+.room_box .txt{width:349px; height:29px; border:#d5d5d5 solid 1px; line-height:29px; padding-left:6px;
+}
+.room_box .btn_box{width:100%; padding:10px 0 7px; background:#eae9e9; margin-top:18px; text-align:center;
+}
+.room_box .btn_box .create{display:block; width:128px; height:25px; line-height:25px; text-align:center; background:#76d4eb; color:#FFF; margin:0 auto;
+}
+/*语音会议弹出层*/
+.speak_box1{height:500px; margin-top:-250px;
+}
+.speak_box1 .p3{height:30px; line-height:30px; padding-left:20px; margin-top:16px;
+}
+.speak_box1 .p3 span{float:left; color:#666;
+}
+.speak_box1 .p3 .text{float:left; width:230px; height:28px; border:#d5d5d5 solid 1px; padding-left:6px; color:#666; 
+}
+.speak_box1 .p3 .free_invite{float:left; padding-left:10px; color:#16bae2;
+}
+.speak_box1 .p4{ text-align:center; color:#333; line-height:22px;
+}
+.speak_box1 .p5{text-align:center; color:#808080; line-height:16px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*一对一视频页面*/
+.shipin{overflow:hidden; margin:42px 0 0 268px;
+}
+.shipin h4{font-size:16px; color:#595959; font-weight:normal;
+}
+.shipin_box{padding:50px 48px 0 38px; overflow:hidden;
+}
+.shipin_box img{float:left; padding-right:16px;
+}
+.shipin_box .shipin_r{float:left; overflow:hidden; width:440px;
+}
+.shipin_r li{width:100%; float:left; overflow:hidden; margin-bottom:16px;
+}
+.shipin_r .select{float:left; width:274px; height:38px; line-height:38px; border:#d5d5d5 solid 1px; font-size:14px; color:#adadad;
+}
+.shipin_r .sp_btn{float:left; display:block; width:274px; height:40px; line-height:40px; text-align:center; font-size:24px; color:#FFF; cursor:pointer; border:0; background:#27836e;
+}
+.shipin .tips{height:30px; line-height:30px; font-size:14px; color:#a2a1a1; margin-top:60px;
+}
+
+/*呼出视频弹出层*/
+.mask_hc, .mask_hr{width:100%; height:100%; background:#000; opacity:0.5; filter:alpha(opacity=50); position:fixed; left:0; top:0; z-index:9;
+}
+.dialog{width:590px; height:466px; background:#f4f4f4; position:absolute; left:50%; top:50%; margin-left:-295px; margin-top:-240px; z-index:99;
+}
+.dialog .title{height:54px; background:#eae9e9; padding-left:16px; line-height:54px; font-size:20px; color:#808080; font-weight:normal;
+} 
+.dialog .video_win{padding:24px 0 16px 16px; height:318px;
+}
+.video_win .video_l{width:350px; height:318px; background:#2d343e; text-align:center; border:#2d343e solid 1px; float:left; margin-right:20px;
+}
+.replayer_img img{margin-top:90px;
+}
+.video_r{width:146px; overflow:hidden; margin-top:90px;
+}
+.video_r .sender_img{width:144px; height:146px; border:#2d343e solid 1px;
+}
+.video_r .person_sp{line-height:30px; text-align:center; font-size:14px; color:#858383;
+}
+.dialog .btns{width:558px; padding:7px 0 8px 0; overflow:hidden; background:#e4e4e4; margin-left:16px;
+}
+.btns .info_con{float:left; line-height:30px; font-size:14px; color:#ab8538; padding-left:8px;
+}
+.btns a{float:right; width:130px; height:30px; line-height:30px; text-align:center; font-size:16px; color:#FFF; margin-right:14px;
+}
+.btns .end_btn, .btns .dropped_btn{background:#76d4eb;
+}
+.btns .start_btn{background:#5edb74;
+}
+.video_r .sp_voice{width:100%; overflow:hidden;
+}
+.sp_voice a{float:left; width:30px; height:42px; margin-left:32px; margin-top:6px; background:url(../images/images/btn_icons.png) 0 0 no-repeat;
+}
+.sp_voice .sp_able{background-position: 0 0;
+}
+.sp_voice .sp_disable{background-position: 0 -86px;
+}
+.sp_voice .voice_able{background-position: 0 -172px;
+}
+.sp_voice .voice_disable{background-position: 0 -263px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

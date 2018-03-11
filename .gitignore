@@ -1,0 +1,11 @@
+out
+gen
+bin
+.idea
+.classpath
+.settings
+.DS_Store
+.metadata
+project.properties
+proguard_logs
+*.iml

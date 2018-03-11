@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+.loginbox{min-width:1000px; max-width:1440px; margin:0 auto; height:840px; overflow:hidden;
+}
+.tiyan{width:882px; margin:120px auto; overflow:hidden;
+}
+.account_info{width:426px; float:left; overflow:hidden;
+}
+.account_info h3{padding-top:32px; font-size:18px; color:#595959; font-weight:normal;
+}
+.account_info .choose{padding-bottom:18px;
+}
+.account_info .account{width:423px; height:48px; border:#d5d5d5 solid 1px; border-bottom:#d5d5d5 solid 2px; margin-top:18px;
+}
+.account_info .account label, .account_info .pass label{float:left; width:54px; padding-left:44px; height:48px; background:#fafafa; font-size:18px; color:#595959; line-height:50px;
+}
+.account_info .account .text, .account_info .pass .text{width:308px; height:48px; line-height:50px; border:none; padding-left:12px; font-size:18px; color:#adadad; float:left;
+}
+.account_info .pass{width:423px; height:48px; border:#d5d5d5 solid 1px; border-bottom:#d5d5d5 solid 2px; border-top:none;
+}
+.account_info .selectbox{*width:420px; *height:44px; *overflow:hidden; *display:inline-block; *border:#d5d5d5 solid 1px;
+}
+.account_info .select{width:423px; height:48px; border:#d5d5d5 solid 1px; *margin:-2px; 
+}
+.account_info .login_btn{width:423px; height:50px; float:left; line-height:50px; text-align:center; font-size:24px; color:#FFF; background:#31a489; margin:38px 0 36px 0;
+}
+.account_info .links{width:100%; text-align:right;
+}
+.account_info .links a{font-size:16px; color:#0096ff;
+}
+.account_info .links .zhuce{padding-right:10px;
+}
+.worm_info{width:296px; float:left; padding-left:144px; margin-top:58px;
+}
+.worm_info p{font-size:14px; color:#958888; margin-top:22px; line-height:20px;
+}
+.worm_info p a{color:#0096ff;
+}

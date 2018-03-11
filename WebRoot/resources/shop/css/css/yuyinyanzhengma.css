@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+.voice_box{width:428px; overflow:hidden; margin-top:40px; margin-left:250px;
+}
+.voice_box .p1{font-size:18px; color:#8a8c8e; padding-bottom:20px;
+}
+.voice_box .p2{font-size:18px; color:#595959;
+}
+.voice_box .p3{margin:20px 0 22px 0; width:100%; overflow:hidden;
+}
+.voice_box .txt1{width:416px; height:38px; line-height:40px; border:#d5d5d5 solid 1px; padding-left:8px; 
+}
+.voice_box .p4{margin:20px 0 56px 0; width:100%; overflow:hidden;
+}
+.voice_box .txt2{width:244px; height:38px; line-height:40px; border:#d5d5d5 solid 1px; padding-left:8px; float:left;
+}
+.voice_box .get_code{float:right; width:156px; height:40px; line-height:40px; background:#835b27; font-size:18px; text-align:center; color:#FFF;
+}
+.voice_box .submit_btn{display:inline-block; width:426px; height:40px; line-height:40px; background:#27836e; font-size:24px; color:#FFF; text-align:center;
+}
+.voice_box .error{font-size:14px; color:#f24143; float:left; line-height:24px; width:96%;
+}

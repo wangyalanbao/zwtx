@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.call_out{width:428px; overflow:hidden; margin-top:40px; margin-left:250px;
+}
+.call_out h3{font-size:14px; color:#a5a7a8; font-weight:normal;
+}
+.call_out h4{font-size:14px; color:#595959; font-weight:normal; padding:15px 0 16px 0;
+}
+.call_out li{width:100%; overflow:hidden; margin-top:15px;
+}
+.call_out li.l1{margin-top:20px;
+}
+.call_out .txt{width:424px; height:38px; line-height:40px; border:#d5d5d5 solid 1px;
+}
+.call_out .start_call{width:426px; height:42px; line-height:42px; background:#27836e; font-size:24px; color:#FFF; float:left; text-align:center;
+}
+.call_out .error{font-size:14px; color:#f24143; float:left; line-height:24px; width:96%;
+}

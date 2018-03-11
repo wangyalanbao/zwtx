@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;
+}
+a{text-decoration:none;
+}
+.caller{width:100%; overflow:hidden; margin:32px auto 0; position:relative; font-family:'Microsoft YaHei';
+}
+.caller h4{font-size:16px; color:#595959; font-weight:normal; padding-left:126px; 
+}
+.caller h3{font-size:18px; color:#595959; font-weight:normal; padding:24px 0 38px 126px;
+}
+.gifbox{width:100%; height:115px; text-align:center;
+}
+.tel_info{width:100%; font-size:18px; color:#595959; text-align:center;
+}
+.operate_box{ overflow:hidden; text-align:center; width:424px; margin:32px auto 0;
+}
+.operate_box a{display:block; width:202px; height:40px; line-height:40px; text-align:center; font-size:24px; color:#FFF; 
+}
+.operate_box .answer{background:#27836e; margin-right:18px; float:left;
+}
+.operate_box .hang_up{background:#fc5b4a; float:left;
+}
+.operate_box .answer1{background:#27836e; margin:0 auto;
+}
+.operate_box .hang_up1{background:#fc5b4a; margin:0 auto;
+}
+.caller .footer_tips{background:url(../images/green_solid.png) 124px 8px no-repeat; font-size:14px; color:#444; padding-left:150px;
+}
+/*遮罩层*/
+.common_title1{font-weight:normal; height:40px; font-family:'幼圆'; color:#808080; border-bottom: #e7e5e5 solid 2px;
+} 
+.common_title1 span{float:left; font-size:24px; line-height:40px; padding-left:20px;
+}
+.common_title1 .closed{float:right; padding-right:20px; font-size:16px; line-height:40px; color:#16bae2;
+}
+#mask{width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.5; filter:alpha(opacity:50); z-index:99;display:none;
+}
+.mask_box{width:696px; height:440px; position:absolute; left:50%; top:50%; margin-left:-348px; margin-top:-220px; z-index:999; background:#FFF;display:none;
+}
+/*键盘*/
+.telDiv{width:192px; height:170px; position:absolute; right:14px; top:70px; background:url(../images/key_board.jpg) left top no-repeat;
+}
+.telDiv span{float:left; width:62px; height:42px; line-height:42px; text-align:center; color:#5A5A5A; font-size:20px; font-family:'Microsoft YaHei';
+cursor:pointer;
+}

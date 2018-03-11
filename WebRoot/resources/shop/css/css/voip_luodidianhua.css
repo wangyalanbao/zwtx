@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+.luodi{width:476px; overflow:hidden; margin:42px 0 0 268px;
+}
+.luodi h4{font-size:16px; color:#595959; font-weight:normal;
+}
+.luodi h3{font-size:18px; color:#595959; font-weight:normal; padding:22px 0 28px 0;
+}
+.common_style{padding:0 48px 0 38px; overflow:hidden;
+}
+.common_style img{float:left; padding-right:16px;
+}
+.common_style .common_div{float:left; width:276px; overflow:hidden;
+}
+.common_div .selectbox{*width:270px; *height:34px; *line-height:40px; *float:left; *border:#d5d5d5 solid 1px; overflow:hidden;
+}
+.common_div .select{width:274px; height:38px; line-height:40px; border:#d5d5d5 solid 1px; float:left; *margin:-2px; color:#adadad; font-size:14px;
+}
+.common_div .common_btn{float:left; width:274px; height:40px; line-height:40px; background:#27836e; font-size:24px; color:#FFF; text-align:center; margin-top:16px;
+}
+.common_div .text{width:264px; height:38px; line-height:40px; border:#d5d5d5 solid 1px; padding-left:10px; color:#adadad; font-size:14px;
+}
+.luodi .div1{margin:80px 0 62px 0;
+}
+.luodi .footer_tips{background:url(../images/green_solid.png) 124px 8px no-repeat; font-size:14px; color:#444; padding-left:150px;
+}
