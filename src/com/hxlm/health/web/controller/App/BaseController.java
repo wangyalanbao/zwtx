@@ -3,7 +3,7 @@
  * 
  * 
  */
-package com.hxlm.health.web.controller.App;
+package com.hxlm.health.web.controller.app;
 
 import com.hxlm.health.web.DateEditor;
 import com.hxlm.health.web.HtmlCleanEditor;
