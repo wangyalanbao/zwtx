@@ -25,7 +25,7 @@ public class SendSms {
 
     private Logger logger = LoggerFactory.getLogger(SendSms.class);
 
-    private static final String Url="http://smssh1.253.com/msg/send/json";
+    private static final String Url="http://smssh1.253.com/msg/send/xml";
     private static final String USERNAME = "N1733610";
     private static final String PASSWORD = "SjzZvCP8lo2e16";
 

@@ -118,5 +118,7 @@ public class Status {
     public static final int CARD_ISMOVE = 55;
     // 已经预约
     public static final int SCHEDULE_RESERVE = 56;
+    //手机号和验证码不匹配
+    public static final int NOT_PHONE_CODE = 57;
 
 }

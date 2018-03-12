@@ -63,10 +63,10 @@ public class LoginController extends BaseController {
 	 */
 	@RequestMapping(value = "/logincheck", method = RequestMethod.GET)
 	public @ResponseBody
-	Result loginCheck() {
+	ErrorMsg loginCheck() {
 		Result result = new Result();
 		result.setData(memberService.isAuthenticated());
-		result.setStatus(Status.SUCCESS);
+		result.setCode(Status.SUCCESS);
 		return result;
 	}
 
@@ -186,12 +186,13 @@ public class LoginController extends BaseController {
 	 */
 	@RequestMapping(value = "/commit",method = RequestMethod.POST)
 	public @ResponseBody
-	Result commit(String username, String password, HttpServletRequest request, HttpServletResponse response, HttpSession session,String deviceToken){
+	ErrorMsg commit(String username, String password, HttpServletRequest request, HttpServletResponse response, HttpSession session,String deviceToken){
 		Result result=new Result();
+		ErrorMsg errorMsg = new ErrorMsg();
 		Member member = memberService.findByUsername(username);
 		if (member == null) { //此账号不存在
-			result.setData("该账号不存在");
-			result.setStatus(Status.INVALID_PARAMS);
+			errorMsg.setMessage("该账号不存在");
+			errorMsg.setCode(Status.INVALID_PARAMS);
 		} else {
 			if(DigestUtils.md5Hex(password).equals(member.getPassword())){
 
@@ -223,10 +224,10 @@ public class LoginController extends BaseController {
 					memberService.updateToken(member.getId(),deviceToken);
 				}
 				result.setData(map);
-				result.setStatus(Status.SUCCESS);
+				result.setCode(Status.SUCCESS);
 			}else {
-				result.setData("登录失败");
-				result.setStatus(Status.INVALID_PARAMS);
+				errorMsg.setMessage("登录失败");
+				errorMsg.setCode(Status.INVALID_PARAMS);
 			}
 		}
 	return result;

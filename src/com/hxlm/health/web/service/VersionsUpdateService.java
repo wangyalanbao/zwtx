@@ -1,5 +1,6 @@
 package com.hxlm.health.web.service;
 
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Page;
 import com.hxlm.health.web.Pageable;
 import com.hxlm.health.web.Result;
@@ -12,7 +13,7 @@ import com.hxlm.health.web.entity.VersionsUpdate;
  */
 public interface VersionsUpdateService extends BaseService<VersionsUpdate,Long> {
 
-    Result updateVersion(String versionsNum,String channelTypes);
+    ErrorMsg updateVersion(String versionsNum,String channelTypes);
     //判断版本类型是否存在
     boolean channelTypesExists(String channelTypes);
 

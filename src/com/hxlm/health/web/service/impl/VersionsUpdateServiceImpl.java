@@ -1,9 +1,6 @@
 package com.hxlm.health.web.service.impl;
 
-import com.hxlm.health.web.Page;
-import com.hxlm.health.web.Pageable;
-import com.hxlm.health.web.Result;
-import com.hxlm.health.web.Status;
+import com.hxlm.health.web.*;
 import com.hxlm.health.web.dao.VersionsUpdateDao;
 import com.hxlm.health.web.entity.SoftwareManage;
 import com.hxlm.health.web.entity.VersionsUpdate;
@@ -39,7 +36,7 @@ public class VersionsUpdateServiceImpl extends BaseServiceImpl<VersionsUpdate,Lo
     /*
     根据前台传入版本信息判断是否更新
    */
-    public Result updateVersion(String versionsNum,String channelTypes){
+    public ErrorMsg updateVersion(String versionsNum,String channelTypes){
         Result result=new Result();
         Map map=new HashMap();
         //如果类型为apple则为苹果手机，判断与苹果系统版本是否相同
@@ -49,12 +46,12 @@ public class VersionsUpdateServiceImpl extends BaseServiceImpl<VersionsUpdate,Lo
 //                map.put("downurl", VersionsUpdate.APPLEVERSIONSAddress);
             map.put("downurl",versionsUpdateDao.address(channelTypes));
             result.setData(map);
-            result.setStatus(Status.SUCCESS);
+            result.setCode(Status.SUCCESS);
         }else {
             map.put("isUpdate",false);
             map.put("downurl",versionsUpdateDao.address(channelTypes));
             result.setData(map);
-            result.setStatus(Status.SUCCESS);
+            result.setCode(Status.SUCCESS);
         }
         return result;
     }
@@ -71,21 +68,21 @@ public class VersionsUpdateServiceImpl extends BaseServiceImpl<VersionsUpdate,Lo
             map.put("isUpdate", false);
             map.put("downurl", null);
             result.setData(map);
-            result.setStatus(Status.SUCCESS);
+            result.setCode(Status.SUCCESS);
         }else {//版本不为空则用版本号做对比，与传来的版本号比较如果相同返回false，不用更新;如果不相同则返回true
             VersionsUpdate versions = versionsUpdates.get(0);
             if(versions.getVersionsNum() == versionsNum || versions.getVersionsNum().equals(versionsNum)){
                 map.put("isUpdate", false);
                 map.put("downurl", versions.getDownurl());
                 result.setData(map);
-                result.setStatus(Status.SUCCESS);
+                result.setCode(Status.SUCCESS);
                 return result;
 
             }else {
                 map.put("isUpdate",true);
                 map.put("downurl",versions.getDownurl());
                 result.setData(map);
-                result.setStatus(Status.SUCCESS);
+                result.setCode(Status.SUCCESS);
                 return result;
             }
         }

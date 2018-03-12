@@ -252,10 +252,10 @@ public class MemberServiceImpl extends BaseServiceImpl<Member, Long> implements 
 	/**
 	 * 查询所有
 	 */
-	public Result getList(){
+	public ErrorMsg getList(){
 		Result  result=new Result();
 		result.setData(super.findAll());
-		result.setStatus(Status.SUCCESS);
+		result.setCode(Status.SUCCESS);
 		return result;
 	}
 

@@ -186,6 +186,11 @@ public class Member extends BaseEntity {
     private String mobile;
 
     /**
+     * 用户设备号
+     */
+    private String imei;
+
+    /**
      * 会员注册项值0
      */
     private String attributeValue0;
@@ -303,9 +308,10 @@ public class Member extends BaseEntity {
     /*头像图片*/
     private String memberImage;
 
-
-
-
+    /**
+     * 用户昵称
+     */
+    private String nickName;
 
     /*Request Headers请求头里的User-Agent*/
     private String ua;
@@ -1323,6 +1329,38 @@ public class Member extends BaseEntity {
      */
     public void setOutMessages(Set<Message> outMessages) {
         this.outMessages = outMessages;
+    }
+
+    /**
+     * 获取用户昵称
+     * @return
+     */
+    public String getNickName() {
+        return nickName;
+    }
+
+    /**
+     * 设置用户昵称
+     * @param nickName
+     */
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    /**
+     * 获取设备号
+     * @return
+     */
+    public String getImei() {
+        return imei;
+    }
+
+    /**
+     * 设置设备号
+     * @param imei
+     */
+    public void setImei(String imei) {
+        this.imei = imei;
     }
 
     /**

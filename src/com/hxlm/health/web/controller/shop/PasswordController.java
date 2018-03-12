@@ -5,11 +5,8 @@
  */
 package com.hxlm.health.web.controller.shop;
 
-import com.hxlm.health.web.Message;
-import com.hxlm.health.web.Result;
-import com.hxlm.health.web.Setting;
+import com.hxlm.health.web.*;
 import com.hxlm.health.web.Setting.CaptchaType;
-import com.hxlm.health.web.Status;
 import com.hxlm.health.web.entity.BaseEntity.Save;
 import com.hxlm.health.web.entity.Member;
 import com.hxlm.health.web.entity.SafeKey;
@@ -155,15 +152,16 @@ public class PasswordController extends BaseController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "/captchaPassword",method = RequestMethod.POST)
-	public Result captcha(String username,HttpSession session){
+	public ErrorMsg captcha(String username,HttpSession session){
 		Result result=new Result();
+		ErrorMsg errorMsg = new ErrorMsg();
 		Map map = new HashMap();
 		String randomCode="";
 		Member member=memberService.findByUsername(username);
 		//先判断用户名是否存在
 		if(member==null){
-			result.setData("用户不存在或者手机号码错误，请重新输入");
-			result.setStatus(Status.INVALID_PARAMS);
+			errorMsg.setMessage("用户不存在或者手机号码错误，请重新输入");
+			errorMsg.setCode(Status.INVALID_PARAMS);
 		}else {
 			// map2为空，生成验证码并存入session下发客户端
 			Map map2= (Map) session.getAttribute(username);
@@ -175,7 +173,7 @@ public class PasswordController extends BaseController {
 				map.put("code",randomCode);
 				session.setAttribute(username,map);
 				session.setMaxInactiveInterval(9000);
-				result.setStatus(Status.SUCCESS);
+				result.setCode(Status.SUCCESS);
 				result.setData(randomCode);
 			}else {
 					//如果map中有值获得手机号所对的时间
@@ -192,10 +190,10 @@ public class PasswordController extends BaseController {
 						map.put("code", randomCode);
 						session.setAttribute(username, map);
 						session.setMaxInactiveInterval(9000);
-						result.setStatus(Status.SUCCESS);
+						result.setCode(Status.SUCCESS);
 						result.setData(randomCode);
 					} else { // 没有超时，不需要重新生成。直接输出result结果。
-						result.setStatus(Status.INVALID_EXCHANGE_TIME);
+						result.setCode(Status.INVALID_EXCHANGE_TIME);
 						result.setData("两次请求时间间隔太短");
 					}
 			}
@@ -216,8 +214,8 @@ public class PasswordController extends BaseController {
 		Map map = (Map) session.getAttribute(username);
 		if (map == null || map.isEmpty()) { //测试用注册验证session过期
 			// session过期或者没有下发过验证码，返回客户端错误信息
-			result.setData("服务超时，请重新获取验证码");
-			result.setStatus(Status.SERVER_TIME_OUT);
+			result.setMessage("服务超时，请重新获取验证码");
+			result.setCode(Status.SERVER_TIME_OUT);
 		} else { //做验证，保存数据库或者返回客户端相关错误信息等
 //			注册获取验证码使用代码
 			String randomCode = (String) map.get("code");
@@ -228,16 +226,16 @@ public class PasswordController extends BaseController {
 				//验证新密码类型是否正确，更改成功
 				if (newPassword.length() < 4) {
 					result.setData("密码长度不允许小于4");
-					result.setStatus(Status.INVALID_PARAMS);
+					result.setCode(Status.INVALID_PARAMS);
 				} else {
 					member.setPassword(DigestUtils.md5Hex(newPassword));
 					memberService.update(member);
 					result.setData("恭喜您修改成功");
-					result.setStatus(Status.SUCCESS);
+					result.setCode(Status.SUCCESS);
 				}
 			} else {
 				result.setData("验证码错误，请重新输入");
-				result.setStatus(Status.INVALID_PARAMS);
+				result.setCode(Status.INVALID_PARAMS);
 			}
 		}
 		return result;

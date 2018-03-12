@@ -1,5 +1,6 @@
 package com.hxlm.health.web.controller.shop;
 
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Result;
 import com.hxlm.health.web.Status;
 import com.hxlm.health.web.entity.DeviceToken;
@@ -26,11 +27,12 @@ public class DeviceTokenController extends BaseController {
 
     @RequestMapping(value = "/set", method = RequestMethod.GET)
     public @ResponseBody
-    Result set(String token, Long id, DeviceToken.DeviceType deviceType) {
+    ErrorMsg set(String token, Long id, DeviceToken.DeviceType deviceType) {
         Result result = new Result();
+        ErrorMsg errorMsg = new ErrorMsg();
         if (token == null || deviceType == null) {
-            result.setStatus(Status.INVALID_PARAMS);
-            result.setData("参数错误");
+            errorMsg.setCode(Status.INVALID_PARAMS);
+            errorMsg.setMessage("参数错误");
             return result;
         }
         String tmpToken = token.replace(" ", "");
@@ -53,8 +55,8 @@ public class DeviceTokenController extends BaseController {
             deviceTokenService.update(deviceToken);
         }
 
-        result.setStatus(Status.SUCCESS);
-        result.setData("ok");
+        result.setCode(Status.SUCCESS);
+        result.setMessage("ok");
         return result;
     }
 

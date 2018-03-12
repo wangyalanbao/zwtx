@@ -1,5 +1,6 @@
 package com.hxlm.health.web.service;
 
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Page;
 import com.hxlm.health.web.Pageable;
 import com.hxlm.health.web.Result;
@@ -13,7 +14,7 @@ import java.util.List;
  * ---子账户
  */
 public interface MemberChildService extends BaseService<MemberChild,Long> {
-    Result getList();
+    ErrorMsg getList();
     Page<MemberChild> findPage(Member member, Pageable pageable);
 //    根据会员ID查找子账户
     Result list(Member member);

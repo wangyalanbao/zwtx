@@ -1,5 +1,6 @@
 package com.hxlm.health.web.controller.shop;
 
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Result;
 import com.hxlm.health.web.Status;
 import com.hxlm.health.web.service.VersionsUpdateService;
@@ -30,18 +31,19 @@ public class VersionsUpdateController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "/updateVersion" , method = RequestMethod.GET)
-    public Result updateVersion(HttpServletRequest request){
+    public ErrorMsg updateVersion(HttpServletRequest request){
         Result result = new Result();
+        ErrorMsg errorMsg = new ErrorMsg();
         String version = request.getHeader("version");
         if(version == null && version.isEmpty()){
-            result.setData("软件编码不存在~！");
-            result.setStatus(Status.INVALID_PARAMS);
+            errorMsg.setMessage("软件编码不存在~！");
+            errorMsg.setCode(Status.INVALID_PARAMS);
             return result;
         }
         String[] strList = version.split("-");
         if(strList == null && strList.length != 3){
-            result.setData("软件编码格式有误~！");
-            result.setStatus(Status.INVALID_PARAMS);
+            errorMsg.setMessage("软件编码格式有误~！");
+            errorMsg.setCode(Status.INVALID_PARAMS);
             return result;
         }
         return versionsUpdateService.vsesion(strList[0], strList[1], strList[2]);

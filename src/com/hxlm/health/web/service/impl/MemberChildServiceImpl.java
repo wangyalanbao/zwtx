@@ -1,9 +1,6 @@
 package com.hxlm.health.web.service.impl;
 
-import com.hxlm.health.web.Page;
-import com.hxlm.health.web.Pageable;
-import com.hxlm.health.web.Result;
-import com.hxlm.health.web.Status;
+import com.hxlm.health.web.*;
 import com.hxlm.health.web.dao.MemberChildDao;
 import com.hxlm.health.web.entity.Member;
 import com.hxlm.health.web.entity.MemberChild;
@@ -32,10 +29,10 @@ public class MemberChildServiceImpl extends BaseServiceImpl<MemberChild,Long> im
      *获得子账户列表
      * @return
      */
-    public Result getList() {
+    public ErrorMsg getList() {
         Result result=new Result();
         result.setData(super.findAll());
-        result.setStatus(Status.SUCCESS);
+        result.setCode(Status.SUCCESS);
 
         return result;
     }
@@ -51,10 +48,10 @@ public class MemberChildServiceImpl extends BaseServiceImpl<MemberChild,Long> im
 //        判断获取到的会员是否为空，空返回一个空集合，否则返回子账户列表
         if (member == null) {
             result.setData(new ArrayList());
-            result.setStatus(Status.INVALID_MEMBER);
+            result.setCode(Status.INVALID_MEMBER);
         } else {
             result.setData(memberChildDao.list(member));
-            result.setStatus(Status.SUCCESS);
+            result.setCode(Status.SUCCESS);
         }
         return result;
     }
@@ -82,12 +79,12 @@ public class MemberChildServiceImpl extends BaseServiceImpl<MemberChild,Long> im
         Result  result=new Result();
         if(mobile == null){
             result.setData("手机号不能为空");
-            result.setStatus(Status.INVALID_MOBILE);
+            result.setCode(Status.INVALID_MOBILE);
         } else if (!memberChildDao.mobileExists(mobile)) {
             result.setData("该子账户不存在");
-            result.setStatus(Status.INVALID_MEMBER);
+            result.setCode(Status.INVALID_MEMBER);
         } else {
-            result.setStatus(Status.SUCCESS);
+            result.setCode(Status.SUCCESS);
             result.setData(memberChildDao.findMobile(mobile));
         }
         return result;

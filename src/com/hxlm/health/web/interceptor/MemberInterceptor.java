@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.hxlm.health.web.Result;
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Status;
 import com.hxlm.health.web.service.MemberService;
 import com.hxlm.health.web.Principal;
@@ -71,13 +71,13 @@ public class MemberInterceptor extends HandlerInterceptorAdapter {
 		} else {
 			String version = request.getHeader(VERSION_NAME);
 			if (version != null) {
-				Result result = new Result();
-				result.setStatus(Status.UNLOGIN);
-				result.setData("请先登录后在进行相关操作!");
+				ErrorMsg errorMsg = new ErrorMsg();
+				errorMsg.setCode(Status.UNLOGIN);
+				errorMsg.setMessage("请先登录后在进行相关操作!");
 				response.setContentType("application/json");
 				response.setCharacterEncoding("UTF-8");
 				Writer writer = response.getWriter();
-				JSONObject json = JSONObject.fromObject(result);
+				JSONObject json = JSONObject.fromObject(errorMsg);
 				writer.write(json.toString());
 				writer.flush();
 				writer.close();

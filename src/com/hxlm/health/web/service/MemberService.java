@@ -5,6 +5,7 @@
  */
 package com.hxlm.health.web.service;
 
+import com.hxlm.health.web.ErrorMsg;
 import com.hxlm.health.web.Page;
 import com.hxlm.health.web.Pageable;
 import com.hxlm.health.web.Result;
@@ -147,7 +148,7 @@ public interface MemberService extends BaseService<Member, Long> {
 	 * 会员列表
 	 */
 
-	Result getList();
+	ErrorMsg getList();
 
 //	重写save方法，返回MemberID
 	Long saveMember(Member member);

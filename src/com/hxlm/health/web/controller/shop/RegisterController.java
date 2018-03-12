@@ -252,10 +252,11 @@ public class RegisterController extends BaseController {
 
 	@RequestMapping(value = "/captcha", method = RequestMethod.POST)
 	public @ResponseBody
-	Result captcha(String username, HttpSession session) {
+	ErrorMsg captcha(String username, HttpSession session) {
 		//定义验证码
 		String randomCode = "";
 		Result result = new Result();
+		ErrorMsg errorMsg = new ErrorMsg();
 		Map map = new HashMap();
 		int status;
 		//设定username为手机号格式
@@ -307,7 +308,7 @@ public class RegisterController extends BaseController {
 			randomCode = "只能输入手机号";
 		}
 		result.setData(randomCode);
-		result.setStatus(status);
+		result.setCode(status);
 		return result;
 	}
 
@@ -319,12 +320,13 @@ public class RegisterController extends BaseController {
 	 */
 	@RequestMapping(value = "/commit", method = RequestMethod.POST)
 	public @ResponseBody
-	Result commit(String username, String password, String password2, String code, HttpServletRequest request, HttpSession session) {
+	ErrorMsg commit(String username, String password, String password2, String code, HttpServletRequest request, HttpSession session) {
 		Result result = new Result();
+		ErrorMsg errorMsg = new ErrorMsg();
 
 		if (memberService.usernameDisabled(username) || memberService.usernameExists(username)){
-			result.setStatus(Status.INVALID_MOBILE);
-			result.setData("手机号不正确或已被注册，请重新输入");
+			errorMsg.setCode(Status.INVALID_MOBILE);
+			errorMsg.setMessage("手机号不正确或已被注册，请重新输入");
 			return result;
 		}
 
@@ -334,8 +336,8 @@ public class RegisterController extends BaseController {
 
 		if (map == null || map.isEmpty()) { //测试用注册验证session过期
 			// session过期或者没有下发过验证码，返回客户端错误信息
-			result.setData("服务超时，请重新获取验证码");
-			result.setStatus(Status.SERVER_TIME_OUT);
+			errorMsg.setMessage("服务超时，请重新获取验证码");
+			errorMsg.setCode(Status.SERVER_TIME_OUT);
 		} else { //做验证，保存数据库或者返回客户端相关错误信息等
 			//注册获取验证码使用代码
 			String randomCode = (String) map.get("code");
@@ -347,8 +349,8 @@ public class RegisterController extends BaseController {
 			if (randomCode.equals(code)) {
 				//判断密码长度是否符合规定
 				if(password.length()<4){
-					result.setData("密码长度不允许小于4");
-					result.setStatus(Status.INVALID_PARAMS);
+					errorMsg.setMessage("密码长度不允许小于4");
+					errorMsg.setCode(Status.INVALID_PARAMS);
 				} else {
 					if(password.equals(password2)){
 						Member member = new Member();
@@ -381,15 +383,15 @@ public class RegisterController extends BaseController {
 						mmap.put("JSESSIONID", session.getId());
 						mmap.put("member", member);
 						result.setData(mmap);
-						result.setStatus(Status.SUCCESS);
+						result.setCode(Status.SUCCESS);
 					}else {
-						result.setData("两次密码不同,请重新输入");
-						result.setStatus(Status.INVALID_PASSWORD);
+						errorMsg.setMessage("两次密码不同,请重新输入");
+						errorMsg.setCode(Status.INVALID_PASSWORD);
 					}
 				}
 			} else {
-				result.setData("验证码错误，请重新输入");
-				result.setStatus(Status.INVALID_REGCODE);
+				errorMsg.setMessage("验证码错误，请重新输入");
+				errorMsg.setCode(Status.INVALID_REGCODE);
 			}
 		}
 
@@ -453,7 +455,7 @@ public class RegisterController extends BaseController {
 	 */
 	@RequestMapping(value = "/login",method = RequestMethod.POST)
 	public @ResponseBody
-	Result commit(String username,String password,HttpServletRequest request){
+	ErrorMsg commit(String username,String password,HttpServletRequest request){
 		Result result=new Result();
 		Member member;
 		int status=Status.SUCCESS;
@@ -474,7 +476,7 @@ public class RegisterController extends BaseController {
 		}
 		}
 		result.setData(message);
-		result.setStatus(status);
+		result.setCode(status);
 		return result;
 	}
 
