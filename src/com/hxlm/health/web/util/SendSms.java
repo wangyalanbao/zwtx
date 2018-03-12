@@ -1,5 +1,6 @@
 package com.hxlm.health.web.util;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -25,7 +26,7 @@ public class SendSms {
 
     private Logger logger = LoggerFactory.getLogger(SendSms.class);
 
-    private static final String Url="http://smssh1.253.com/msg/send/xml";
+    private static final String Url="http://smssh1.253.com/msg/send/json";
     private static final String USERNAME = "N1733610";
     private static final String PASSWORD = "SjzZvCP8lo2e16";
 
@@ -84,7 +85,24 @@ public class SendSms {
 //        return "0";
     }
 
+    /**
+     * 调用发送接口
+     * @param phone
+     * @param content
+     * @return
+     */
+    public String getVerification(String phone, String content) {
+        //code = (int) (Math.random() * 9000 + 1000) + "";
+        SmsSendRequest smsSingleRequest = new SmsSendRequest(USERNAME, PASSWORD, content, phone);
+        String requestJson = JSON.toJSONString(smsSingleRequest);
+        String response = ChuangLanSmsUtil.sendSmsByPost(Url, requestJson);
+        logger.error("=================== response =================" + response);
+        SmsSendResponse smsSingleResponse = (SmsSendResponse)JSON.parseObject(response, SmsSendResponse.class);
+        logger.error("======================= sendms result code ====================" + smsSingleResponse.getCode());
+        return smsSingleResponse.getCode();
+    }
+
     public static void main(String[] args) throws Exception {
-        new SendSms().send("17709339957", "您的校验码是：【1234】，有效期是5分钟，请不要把校验码泄露给其他人。如非本人操作，可不用理会！");
+        new SendSms().getVerification("17611349025", "您的校验码是：【1234】，有效期是5分钟，请不要把校验码泄露给其他人。如非本人操作，可不用理会！");
     }
 }

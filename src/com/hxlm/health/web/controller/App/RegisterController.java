@@ -43,7 +43,7 @@ public class RegisterController extends BaseController{
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/verification")
+    @RequestMapping(value = "/verification", method = RequestMethod.POST)
     public Object dosendmsgcode(String mobile, HttpSession session) {
         Map map = new HashMap();
 
@@ -61,7 +61,7 @@ public class RegisterController extends BaseController{
             String status = "0";
             //给客户手机发送短信
             try {
-                status = new SendSms().send(mobile, content);
+                status = new SendSms().getVerification(mobile, content, randomCode);
             } catch (Exception e) {
                 map.put("errcode", 258);
                 map.put("message", "验证码发送失败,请稍后重试!");
@@ -100,7 +100,7 @@ public class RegisterController extends BaseController{
                 String status = "0";
                 //给客户手机发送短信
                 try {
-                    status = new SendSms().send(mobile, content);
+                    status = new SendSms().getVerification(mobile, content, randomCode);
                 } catch (Exception e) {
                     map.put("errcode", 258);
                     map.put("message", "验证码发送失败,请稍后重试!");
