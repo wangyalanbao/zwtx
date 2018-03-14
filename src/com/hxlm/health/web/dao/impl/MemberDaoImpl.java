@@ -45,6 +45,16 @@ public class MemberDaoImpl extends BaseDaoImpl<Member, Long> implements MemberDa
 		return count > 0;
 	}
 
+	@Override
+	public boolean nicknameExists(String nickname) {
+		if (nickname == null) {
+			return false;
+		}
+		String jpql = "select count(*) from Member members where members.nickName = :nickname";
+		Long count = entityManager.createQuery(jpql, Long.class).setFlushMode(FlushModeType.COMMIT).setParameter("nickname", nickname).getSingleResult();
+		return count > 0;
+	}
+
 	public boolean emailExists(String email) {
 		if (email == null) {
 			return false;

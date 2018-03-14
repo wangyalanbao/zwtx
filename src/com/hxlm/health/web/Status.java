@@ -120,5 +120,7 @@ public class Status {
     public static final int SCHEDULE_RESERVE = 56;
     //手机号和验证码不匹配
     public static final int NOT_PHONE_CODE = 57;
+    //用户名或者密码错误
+    public static final int ERROR_NAME_PASSWORD = 58;
 
 }

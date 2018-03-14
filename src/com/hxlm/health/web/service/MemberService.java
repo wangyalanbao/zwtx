@@ -197,6 +197,10 @@ public interface MemberService extends BaseService<Member, Long> {
 
 	void updateWXUserMsg(Member member);
 
+	/**
+	 * 判断昵称是否存在
+	 */
+	boolean nicknameExists(String nickname);
 
 	}
 

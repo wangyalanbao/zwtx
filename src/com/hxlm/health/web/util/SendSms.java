@@ -86,13 +86,12 @@ public class SendSms {
     }
 
     /**
-     * 调用发送接口
+     * 调用发送接口ring
      * @param phone
-     * @param content
      * @return
      */
     public String getVerification(String phone, String content) {
-        //code = (int) (Math.random() * 9000 + 1000) + "";
+
         SmsSendRequest smsSingleRequest = new SmsSendRequest(USERNAME, PASSWORD, content, phone);
         String requestJson = JSON.toJSONString(smsSingleRequest);
         String response = ChuangLanSmsUtil.sendSmsByPost(Url, requestJson);
@@ -103,6 +102,6 @@ public class SendSms {
     }
 
     public static void main(String[] args) throws Exception {
-        new SendSms().getVerification("17611349025", "您的校验码是：【1234】，有效期是5分钟，请不要把校验码泄露给其他人。如非本人操作，可不用理会！");
+        new SendSms().getVerification("17611349025", "");
     }
 }

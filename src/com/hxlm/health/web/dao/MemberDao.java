@@ -30,6 +30,11 @@ public interface MemberDao extends BaseDao<Member, Long> {
 	boolean usernameExists(String username);
 
 	/**
+	 * 判断昵称是否存在
+	 */
+	boolean nicknameExists(String nickname);
+
+	/**
 	 * 判断E-mail是否存在
 	 * 
 	 * @param email

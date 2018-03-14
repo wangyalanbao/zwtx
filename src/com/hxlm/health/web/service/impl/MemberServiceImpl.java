@@ -293,6 +293,11 @@ public class MemberServiceImpl extends BaseServiceImpl<Member, Long> implements 
 		memberDao.updateWXUserMsg(member);
 	}
 
+	@Override
+	public boolean nicknameExists(String nickname) {
+		return memberDao.nicknameExists(nickname);
+	}
+
 
 }
 

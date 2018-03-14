@@ -309,6 +309,11 @@ public class Member extends BaseEntity {
     private String memberImage;
 
     /**
+     * 雷锋号
+     */
+    private String lf_number;
+
+    /**
      * 用户昵称
      */
     private String nickName;
@@ -1361,6 +1366,22 @@ public class Member extends BaseEntity {
      */
     public void setImei(String imei) {
         this.imei = imei;
+    }
+
+    /**
+     * 获取雷锋号
+     * @return
+     */
+    public String getLf_number() {
+        return lf_number;
+    }
+
+    /**
+     * 得到雷锋号
+     * @param lf_number
+     */
+    public void setLf_number(String lf_number) {
+        this.lf_number = lf_number;
     }
 
     /**

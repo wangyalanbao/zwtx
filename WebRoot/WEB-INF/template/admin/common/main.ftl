@@ -70,18 +70,18 @@
         <th>
             <div id="nav" class="nav">
                 <ul>
-                [#--[#list ["admin:planeBrand", "admin:airplane","admin:airport","admin:airline"] as permission]
+                [#list ["admin:member", "admin:memberRank", "admin:memberAttribute", "admin:consultation"] as permission]
                     [@shiro.hasPermission name = permission]
                         <li>
-                            <a href="#base"  class="current">${message("admin.main.base")}</a>
+                            <a href="#member">${message("admin.main.memberNav")}</a>
                         </li>
                         [#break /]
                     [/@shiro.hasPermission]
-                [/#list]--]
-                [#list ["admin:member"] as permission]
+                [/#list]
+                [#list ["admin:ad", "admin:adPosition"] as permission]
                     [@shiro.hasPermission name = permission]
                         <li>
-                            <a href="#member"  class="current">会员管理</a>
+                            <a href="#ad">广告</a>
                         </li>
                         [#break /]
                     [/@shiro.hasPermission]
@@ -143,15 +143,43 @@
     </tr>
     <tr>
         <td id="menu" class="menu">
-            <dl id="member" style="display: block;">
-                <dt>会员管理</dt>
+            <dl id="member">
+                <dt>${message("admin.main.memberGroup")}</dt>
             [@shiro.hasPermission name="admin:member"]
                 <dd>
-                    <a href="#" target="iframe">${message("admin.main.planeBrand")}</a>
+                    <a href="../member/list.jhtml" target="iframe">${message("admin.main.member")}</a>
+                </dd>
+            [/@shiro.hasPermission]
+            [@shiro.hasPermission name="admin:memberRank"]
+                <dd>
+                    <a href="../member_rank/list.jhtml" target="iframe">${message("admin.main.memberRank")}</a>
+                </dd>
+            [/@shiro.hasPermission]
+            [@shiro.hasPermission name="admin:review"]
+                <dd>
+                    <a href="../review/list.jhtml" target="iframe">${message("admin.main.review")}</a>
+                </dd>
+            [/@shiro.hasPermission]
+            [@shiro.hasPermission name="admin:consultation"]
+                <dd>
+                    <a href="../consultation/list.jhtml" target="iframe">${message("admin.main.consultation")}</a>
                 </dd>
             [/@shiro.hasPermission]
             </dl>
 
+            <dl id="ad">
+                <dt>广告位</dt>
+            [@shiro.hasPermission name="admin:ad"]
+                <dd>
+                    <a href="../ad/list.jhtml" target="iframe">广告</a>
+                </dd>
+            [/@shiro.hasPermission]
+            [@shiro.hasPermission name="admin:adPosition"]
+                <dd>
+                    <a href="../ad_position/list.jhtml" target="iframe">广告位</a>
+                </dd>
+            [/@shiro.hasPermission]
+            </dl>
            [#-- <dl id="base" style="display: block;">
                 <dt>${message("admin.main.base")}</dt>
             [@shiro.hasPermission name="admin:planeBrand"]

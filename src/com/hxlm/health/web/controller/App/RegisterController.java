@@ -37,38 +37,38 @@ public class RegisterController extends BaseController{
     private MsgCodeService msgCodeService;
 
     /**
-     *
-     * @param mobile
-     * @param session
+     * 发送验证码
+     * @param phone
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/verification", method = RequestMethod.POST)
-    public Object dosendmsgcode(String mobile, HttpSession session) {
+    @RequestMapping(value = "/smsSend", method = RequestMethod.GET)
+    public Object smsSend(String phone) {
         Map map = new HashMap();
 
         String randomCode;
-        MsgCode msgCode = msgCodeService.findOne(mobile);
+        MsgCode msgCode = msgCodeService.findOne(phone);
         if (msgCode == null) {
-            // 获取四位随机数
-            randomCode = (int) (Math.random() * 9000 + 1000) + "";
+            // 获取6位随机数
+            randomCode = String.valueOf((int) (Math.random() * 90000 + 100000));
+            String content = "【中网天下】 恭喜您成为雷锋来了一员，整装待发，迈开步伐，新时代的雷锋精神，由我们传承！您的短信验证码是：" + randomCode;
             map.put("time", System.currentTimeMillis());
             map.put("code", randomCode);
 
             System.out.println(" ====== "+randomCode);
-            //String content = "您的校验码是：【" + randomCode + "】，有效期是5分钟，请不要把校验码泄露给其他人！";
-            String content = "您的校验码是：【" + randomCode + "】，有效期是5分钟，请不要把校验码泄露给其他人。如非本人操作，可不用理会！";
             String status = "0";
             //给客户手机发送短信
             try {
-                status = new SendSms().getVerification(mobile, content, randomCode);
+                status = new SendSms().getVerification(phone, randomCode);
+
+                System.out.print("======================= status =======================" + status);
             } catch (Exception e) {
                 map.put("errcode", 258);
                 map.put("message", "验证码发送失败,请稍后重试!");
                 map.put("needauth", 1);
                 return map;
             }
-            if (!status.equals("2")) {
+            if (!"0".equals(status)) {
                 map.put("errcode", 258);
                 map.put("message", "验证码发送失败,请稍后重试!");
                 map.put("needauth", 1);
@@ -76,7 +76,7 @@ public class RegisterController extends BaseController{
             }
 
             msgCode = new MsgCode();
-            msgCode.setMobile(mobile);
+            msgCode.setMobile(phone);
             msgCode.setRandomCode(randomCode);
             msgCodeService.save(msgCode);
 
@@ -89,25 +89,24 @@ public class RegisterController extends BaseController{
             Long nowtime = System.currentTimeMillis();
             if (nowtime - time > 60000L) {
                 map = new HashMap();
-                // 获取四位随机数
-                randomCode = (int) (Math.random() * 9000 + 1000) + "";
+                // 获取6位随机数
+                randomCode = String.valueOf((int) (Math.random() * 90000 + 100000));
+                String content = "【中网天下】 恭喜您成为雷锋来了一员，整装待发，迈开步伐，新时代的雷锋精神，由我们传承！您的短信验证码是：" + randomCode;
                 map.put("time", System.currentTimeMillis());
                 map.put("code", randomCode);
 
                 System.out.println(" ====== "+randomCode);
-                //String content = "您的校验码是：【" + randomCode + "】，有效期是5分钟，请不要把校验码泄露给其他人！";
-                String content = "您的校验码是：【" + randomCode + "】，有效期是5分钟，请不要把校验码泄露给其他人。如非本人操作，可不用理会！";
                 String status = "0";
                 //给客户手机发送短信
                 try {
-                    status = new SendSms().getVerification(mobile, content, randomCode);
+                    status = new SendSms().getVerification(phone, content);
                 } catch (Exception e) {
                     map.put("errcode", 258);
                     map.put("message", "验证码发送失败,请稍后重试!");
                     map.put("needauth", 1);
                     return map;
                 }
-                if (!status.equals("2")) {
+                if (!status.equals("0")) {
                     map.put("errcode", 258);
                     map.put("message", "验证码发送失败,请稍后重试!");
                     map.put("needauth", 1);
@@ -115,7 +114,7 @@ public class RegisterController extends BaseController{
                 }
 
                 msgCode = new MsgCode();
-                msgCode.setMobile(mobile);
+                msgCode.setMobile(phone);
                 msgCode.setRandomCode(randomCode);
                 msgCodeService.save(msgCode);
 
@@ -132,34 +131,52 @@ public class RegisterController extends BaseController{
         return map;
     }
 
+    /**
+     * 生成雷锋号
+     * @return
+     */
+    @RequestMapping(value = "/createLfNumber", method = RequestMethod.GET)
+    @ResponseBody
+    public synchronized Result createLfNumber() {
+        Result result = new Result();
+
+        result.setData(new ArrayList().add(System.currentTimeMillis()));
+        result.setCode(Status.SUCCESS);
+        result.setMessage("雷锋号生成成功");
+
+        return result;
+    }
+
 
     /**
-     * 注册/修改密码接口
+     * 注册接口
      * @param phone
      * 手机号
      * @param code
-     * 验证码
-     * @param memberImage
-     * 头像地址
+     * 验证
      * @param password
      * 密码
-     * @param imei
-     * 设备号
-     * @param gender
-     * 性别
      * @return
+     *ring
+     * 昵称   性别  头像  雷锋号
      */
-    @RequestMapping(value = "/register_or_update", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public ErrorMsg register(String phone, String code, String memberImage, String password, String imei, Member.Gender gender, HttpServletRequest request, HttpServletResponse response, HttpSession session){
+    public ErrorMsg register(String phone, String code, String password, String lf_number, String nickName, String memberImage, Member.Gender gender, HttpServletRequest request, HttpServletResponse response, HttpSession session){
         Result result = new Result();
         ErrorMsg errorMsg = new ErrorMsg();
 
         Setting setting = SettingUtils.get();
 
-        if (phone == null || code == null || memberImage == null || password == null || gender == null || imei == null){
+        if (phone == null || code == null || password == null || lf_number == null || nickName == null || memberImage == null || gender == null){
             errorMsg.setMessage("必填参数不能为空");
             errorMsg.setCode(Status.INVALID_PARAMS);
+            return errorMsg;
+        }
+
+        if (!memberService.nicknameExists(nickName)){
+            errorMsg.setMessage("昵称已存在");
+            errorMsg.setCode(Status.EXISTS_EMAIL);
             return errorMsg;
         }
 
@@ -179,6 +196,7 @@ public class RegisterController extends BaseController{
             //注册
             member = new Member();
             member.setUsername(phone);
+            member.setPhone(phone);
             member.setPassword(DigestUtils.md5Hex(password));
             member.setPoint(setting.getRegisterPoint());
             member.setAmount(new BigDecimal(0));
@@ -187,57 +205,56 @@ public class RegisterController extends BaseController{
             member.setIsLocked(false);
             member.setLoginFailureCount(0);
             member.setLockedDate(null);
-            member.setImei(imei);
+            member.setImei(null);
             member.setRegisterIp(request.getRemoteAddr());
             member.setLoginIp(request.getRemoteAddr());
             member.setLoginDate(new Date());
             member.setSafeKey(null);
-            member = memberService.saveAndReturn(member);
-        } else {
-            //修改密码
-            member.setPassword(DigestUtils.md5Hex(password));
-            member = memberService.update(member);
+            member.setLf_number(lf_number);
+            member.setNickName(nickName);
+            member.setMemberImage(memberImage);
+            member.setGender(gender);
+            memberService.saveAndReturn(member);
         }
-        //登录
-        result = login(member, request, response, session);
+        result.setCode(Status.SUCCESS);
+        result.setData(new ArrayList());
+        result.setMessage("注册成功");
         return result;
     }
 
-
     /**
-     * 登录方法
+     * 更新密码
+     * @param phone
+     * @param code
+     * @param newPassword
+     * @return
      */
-    public Result login(Member member, HttpServletRequest request, HttpServletResponse response, HttpSession session){
-
+    @RequestMapping(value = "/update_password", method = RequestMethod.POST)
+    @ResponseBody
+    public ErrorMsg updatePassword(String phone, String code, String newPassword){
+        ErrorMsg errorMsg = new ErrorMsg();
         Result result = new Result();
 
-        Map map = new HashMap();
-        String token = UUID.randomUUID().toString();
-        map.put("token", token);
-        //增加到一个cookie
-        WebUtils.addCookie(request, response, "token", token);
+        Member member = memberService.findByUsername(phone);
+        if (member == null || code == null || newPassword == null){
+            errorMsg.setCode(Status.INVALID_PARAMS);
+            errorMsg.setMessage("必填参数为空");
+            return errorMsg;
+        }
+        MsgCode msgCode = msgCodeService.findOne(phone);
 
-        Map<String, Object> attributes = new HashMap<String, Object>();
-        Enumeration<?> keys = session.getAttributeNames();
-        while (keys.hasMoreElements()) {
-            String key = (String) keys.nextElement();
-            attributes.put(key, session.getAttribute(key));
+        if (!msgCode.getRandomCode().equals(code)){
+            errorMsg.setMessage("手机号和验证码不匹配");
+            errorMsg.setCode(Status.NOT_PHONE_CODE);
+            return errorMsg;
         }
 
-        session.invalidate();
-        session = request.getSession();
-        for (Map.Entry<String, Object> entry : attributes.entrySet()) {
-            session.setAttribute(entry.getKey(), entry.getValue());
-        }
-        session.setAttribute(Member.PRINCIPAL_ATTRIBUTE_NAME, new Principal(member.getId(), member.getUsername()));
+        member.setPassword(newPassword);
+        memberService.saveMember(member);
 
-        map.put("JSESSIONID", session.getId());
-        map.put("member", member);
-
-        result.setData(map);
-        result.setMessage("success");
         result.setCode(Status.SUCCESS);
-
+        result.setData(new ArrayList());
+        result.setMessage("更新密码成功");
         return result;
     }
 

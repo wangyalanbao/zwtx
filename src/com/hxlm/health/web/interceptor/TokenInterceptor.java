@@ -62,7 +62,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
 			}
 			//response.sendError(HttpServletResponse.SC_FORBIDDEN, ERROR_MESSAGE);
 
-			if (request.getRequestURI().contains("/app/register/")) {
+			if (request.getRequestURI().contains("/app/register") || request.getRequestURI().contains("/app/login")) {
 				return true;
 			}
 

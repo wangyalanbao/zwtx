@@ -116,6 +116,9 @@
 				/admin/institution/** = perms["admin:institution"]
 				/admin/memberList/** = perms["admin:memberList"]
 
+				/admin/ad/** = perms["admin:ad"]
+				/admin/adPosition/** = perms["admin:adPosition"]
+
 				<!--sihanghui-->
 				/admin/planeBrand/** = perms["admin:planeBrand"]
 				/admin/flight_plan/** = perms["admin:specialList"]
